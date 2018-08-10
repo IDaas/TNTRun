@@ -18,6 +18,19 @@ public class Player extends Element implements IPlayer{
 	
 	
 	public void moveToXY(int x , int y) {
+		for (ITile elem : level.getMap()) {
+			if(elem.getX() == this.x && elem.getY()==this.y) {
+				if(elem.getColor()==Color.BLACK) {
+					this.setAlive(false);
+					System.out.println("Dead");
+				}
+				elem.setActivated(true);
+				
+			}
+			
+		}
+		
+		
 		this.x=x;
 		this.y=y;
 		this.setChanged();
@@ -27,7 +40,9 @@ public class Player extends Element implements IPlayer{
 		for (ITile elem : level.getMap()) {
 			if(elem.getX() == this.x && elem.getY()==this.y) {
 				if(elem.getColor()==Color.BLACK) {
-					this.setAlive(false);}
+					this.setAlive(false);
+					System.out.println("Dead");
+				}
 				elem.setActivated(true);
 				
 			}
