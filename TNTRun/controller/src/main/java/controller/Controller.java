@@ -2,12 +2,14 @@ package controller;
 
 import model.ILevel;
 import model.ITile;
+import model.ITimer;
 import view.IView;
 
 public class Controller implements IController{
 	
 	public ILevel level;
 	public IView view;
+	
 	
 	
 
@@ -25,6 +27,7 @@ public class Controller implements IController{
 	
 	
 	public void play() {
+		level.getTimer().start();
 		System.out.println("Play");
 		while(level.getPlayer().isAlive()){
 		for (ITile tile : level.getMap()) {
@@ -39,6 +42,9 @@ public class Controller implements IController{
 			e.printStackTrace();
 		}
 		}
+		
+		level.getTimer().stop();
+		this.view.displayMessage("Game Over in" + level.getTimer().getTime());
 		
 	}
 

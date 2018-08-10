@@ -10,7 +10,7 @@ public class Tile extends Element implements ITile{
 		if(color == Color.BLACK) {
 			this.counter = 0;
 		}
-		else {this.counter=50;}
+		else {this.counter=500;}
 	}
 	
 	

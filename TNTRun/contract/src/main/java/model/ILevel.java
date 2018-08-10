@@ -8,5 +8,6 @@ public interface ILevel {
 	public int getWidth();
 	public int getHeight();
 	public IPlayer getPlayer();
+	public ITimer getTimer();
 
 }

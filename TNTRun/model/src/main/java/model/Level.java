@@ -8,6 +8,7 @@ public class Level implements ILevel{
 	private int width = 30;
 	private int height = 20;
 	private int pixels = 30;
+	private ITimer timer = new Timer();
 	public IPlayer getPlayer() {
 		return player;
 	}
@@ -104,6 +105,16 @@ public class Level implements ILevel{
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+
+
+	public ITimer getTimer() {
+		return timer;
+	}
+
+
+	public void setTimer(ITimer timer) {
+		this.timer = timer;
 	}
 
 	
