@@ -31,7 +31,7 @@ public class Frame extends JFrame implements KeyListener, IView {
 	public Frame(ILevel level) {
 		this.level = level;
 		this.width=level.getWidth()*level.getPixels();
-		this.height=level.getHeight()*level.getPixels();
+		this.height=(level.getHeight()+1)*level.getPixels();
 		
 		this.display = new Display(this.level);
 		this.setTitle("TNTRunner");
