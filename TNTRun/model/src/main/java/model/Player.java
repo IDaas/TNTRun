@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Color;
 
-public class Player extends Element{
+public class Player extends Element implements IPlayer{
 	private boolean alive = true;
 	public Level level;
 	
@@ -24,7 +24,7 @@ public class Player extends Element{
 		this.notifyObservers();
 		
 		//tue le joueur si sur du noir
-		for (Element elem : level.getMap()) {
+		for (ITile elem : level.getMap()) {
 			if(elem.getX() == this.x && elem.getY()==this.y && elem.getColor()==Color.BLACK)
 				this.setAlive(false);
 			

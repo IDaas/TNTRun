@@ -2,18 +2,20 @@ package model;
 
 import java.awt.Color;
 
-public class Tile extends Element{
+public class Tile extends Element implements ITile{
 
 	public Tile(int x, int y , Color color) {
 		super(x, y);
 		this.setColor(color);
-		if(color == color.black) {
+		if(color == Color.BLACK) {
 			this.counter = 0;
 		}
+		else {this.counter=5;}
 	}
 	
-	private int counter = 5;
+	
 	private boolean activated= false;
+	private int counter;
 	
 	
 	
