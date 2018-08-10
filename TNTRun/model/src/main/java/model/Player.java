@@ -25,8 +25,12 @@ public class Player extends Element implements IPlayer{
 		
 		//tue le joueur si sur du noir
 		for (ITile elem : level.getMap()) {
-			if(elem.getX() == this.x && elem.getY()==this.y && elem.getColor()==Color.BLACK)
-				this.setAlive(false);
+			if(elem.getX() == this.x && elem.getY()==this.y) {
+				if(elem.getColor()==Color.BLACK) {
+					this.setAlive(false);}
+				elem.setActivated(true);
+				
+			}
 			
 		}
 	}

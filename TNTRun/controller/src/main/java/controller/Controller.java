@@ -25,11 +25,19 @@ public class Controller implements IController{
 	
 	
 	public void play() {
-		
-		while(level.getPlayer().isAlive())
+		System.out.println("Play");
+		while(level.getPlayer().isAlive()){
 		for (ITile tile : level.getMap()) {
 			tile.reduce();
 			
+		}
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		}
 		
 	}

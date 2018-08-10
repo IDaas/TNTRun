@@ -28,6 +28,7 @@ public abstract class Main {
     	IView view = new Frame(level);
     	
     	Controller controller = new Controller(level , view);
+    	controller.play();
     	
 
 }
