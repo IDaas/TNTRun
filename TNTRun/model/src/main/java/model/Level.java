@@ -1,4 +1,5 @@
 package model;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,15 +28,15 @@ public class Level {
 		for(int posx = 0 ; posx < width ; posx ++) {
 			for(int posy = 0 ; posy < height ; posy ++ ) {
 				if(posx == 0 || posx == width-1 || posy == 0 || posy == height-1)
-					getMap().add(new BlackTile(posx,posy));
+					getMap().add(new Tile(posx,posy,Color.black));
 				else {
 					Random rand = new Random();
 					int  r = rand.nextInt(100);
 					if(r>85) {
-						getMap().add(new BlackTile(posx,posy));
+						getMap().add(new Tile(posx,posy,Color.black));
 					}
 					else {
-						getMap().add(new GrayTile(posx,posy));
+						getMap().add(new Tile(posx,posy,Color.GRAY));
 					}
 					
 					
@@ -58,7 +59,7 @@ public class Level {
 			int  posy = rand.nextInt(height);
 			
 			for (Element element : getMap()) {
-				if(posx == element.getX() && posy ==element.getY() && element instanceof GrayTile)
+				if(posx == element.getX() && posy ==element.getY() && element.getColor()==Color.GRAY)
 					validate=true;
 					player = new Player(posx, posy,this);
 			}

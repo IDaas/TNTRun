@@ -25,7 +25,7 @@ public class Player extends Element{
 		
 		//tue le joueur si sur du noir
 		for (Element elem : level.getMap()) {
-			if(elem.getX() == this.x && elem.getY()==this.y && elem instanceof BlackTile)
+			if(elem.getX() == this.x && elem.getY()==this.y && elem.getColor()==Color.BLACK)
 				this.setAlive(false);
 			
 		}
