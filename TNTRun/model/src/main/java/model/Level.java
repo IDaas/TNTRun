@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Level {
+public class Level implements ILevel{
 	public IPlayer player;
 	private int width = 30;
 	private int height = 20;
@@ -25,9 +25,10 @@ public class Level {
 	
 	public void generate() {
 		setMap(new ArrayList<ITile>());
-		for(int posx = 0 ; posx < width ; posx ++) {
-			for(int posy = 0 ; posy < height ; posy ++ ) {
+		for(int posx = 0 ; posx < width-1 ; posx ++) {
+			for(int posy = 0 ; posy < height-1 ; posy ++ ) {
 				if(posx == 0 || posx == width-1 || posy == 0 || posy == height-1)
+					
 					getMap().add( new Tile(posx,posy,Color.black));
 				else {
 					Random rand = new Random();
@@ -86,9 +87,8 @@ public class Level {
 	}
 	
 	
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+	
+	
 
 	public int getWidth() {
 		return width;

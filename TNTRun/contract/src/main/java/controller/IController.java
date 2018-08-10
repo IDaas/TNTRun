@@ -1,5 +1,6 @@
 package controller;
 
+
 /**
  * <h1>The Interface IController.</h1>
  * 
@@ -7,5 +8,6 @@ package controller;
  * @version 1.0
  */
 public interface IController {
-
+	public void play();
+	
 }

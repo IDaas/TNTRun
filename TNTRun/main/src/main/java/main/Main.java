@@ -1,5 +1,11 @@
 package main;
 
+import controller.Controller;
+
+import model.ILevel;
+import model.Level;
+import view.Frame;
+import view.IView;
 
 /**
  * <h1>The Class Main.</h1>
@@ -16,6 +22,12 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+    	
+    	
+    	ILevel level = new Level();
+    	IView view = new Frame(level);
+    	
+    	Controller controller = new Controller(level , view);
     	
 
 }
