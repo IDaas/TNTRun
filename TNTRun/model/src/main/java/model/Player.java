@@ -4,20 +4,31 @@ import java.awt.Color;
 
 public class Player extends Element{
 	private boolean alive = true;
+	public Level level;
 	
 	
 	
 	
 	
-	public Player(int x, int y) {
+	public Player(int x, int y, Level level) {
 		super(x, y);
 		this.setColor(Color.GREEN);
+		this.level=level;
 	}
 	
 	
 	public void moveToXY(int x , int y) {
 		this.x=x;
 		this.y=y;
+		this.setChanged();
+		this.notifyObservers();
+		
+		//tue le joueur si sur du noir
+		for (Element elem : level.getMap()) {
+			if(elem.getX() == this.x && elem.getY()==this.y && elem instanceof BlackTile)
+				this.setAlive(false);
+			
+		}
 	}
 	
 	

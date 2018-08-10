@@ -16,6 +16,8 @@ public class RedTile extends Element{
 	
 	public void reduce() {
 		this.counter --;
+		this.setChanged();
+		this.notifyObservers();
 		
 	}
 	
