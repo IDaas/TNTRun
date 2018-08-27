@@ -26,8 +26,8 @@ public class Level implements ILevel{
 	
 	public void generate() {
 		setMap(new ArrayList<ITile>());
-		for(int posx = 0 ; posx < width-1 ; posx ++) {
-			for(int posy = 0 ; posy < height-1 ; posy ++ ) {
+		for(int posx = 0 ; posx < width ; posx ++) {
+			for(int posy = 0 ; posy < height ; posy ++ ) {
 				if(posx == 0 || posx == width-1 || posy == 0 || posy == height-1)
 					
 					getMap().add( new Tile(posx,posy,Color.black));
