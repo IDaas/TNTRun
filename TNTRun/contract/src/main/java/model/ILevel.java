@@ -9,5 +9,7 @@ public interface ILevel {
 	public int getHeight();
 	public IPlayer getPlayer();
 	public ITimer getTimer();
+	
+	public void save(String scr);
 
 }

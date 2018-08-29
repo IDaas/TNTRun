@@ -1,6 +1,9 @@
 package controller;
 
 import java.awt.Color;
+import java.util.Scanner;
+
+
 
 import model.ILevel;
 import model.ITile;
@@ -55,9 +58,21 @@ public class Controller implements IController{
 		}
 		
 		level.getTimer().stop();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Veuillez saisir votre nom :");
+		String scr = sc.nextLine();
+		
+		
+		
+		level.save(scr);
+		System.out.println("Saved");
+		
+		
 		if(countgrey==1)this.view.displayMessage("You win" + level.getTimer().getTime());
 			
 		else{this.view.displayMessage("Game Over in" + level.getTimer().getTime());}
+		
 		
 	}
 

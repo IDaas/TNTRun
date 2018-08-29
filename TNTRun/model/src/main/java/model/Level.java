@@ -3,12 +3,17 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
+import model.dao.Datamanager;
+
 public class Level implements ILevel{
 	public IPlayer player;
 	private int width = 30;
 	private int height = 20;
 	private int pixels = 30;
 	private ITimer timer = new Timer();
+	private Datamanager db = new Datamanager();
+	
+	
 	public IPlayer getPlayer() {
 		return player;
 	}
@@ -70,6 +75,18 @@ public class Level implements ILevel{
 		
 		
 	}
+	
+	
+	public void save(String name) {
+			
+		
+			db.save(name, (int) timer.getTime());
+		
+		}
+	
+	
+	
+	
 
 	public ArrayList<ITile> getMap() {
 		return map;
@@ -115,6 +132,16 @@ public class Level implements ILevel{
 
 	public void setTimer(ITimer timer) {
 		this.timer = timer;
+	}
+
+
+	public Datamanager getDb() {
+		return db;
+	}
+
+
+	public void setDb(Datamanager db) {
+		this.db = db;
 	}
 
 	
